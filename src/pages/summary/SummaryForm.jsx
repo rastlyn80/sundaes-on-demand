@@ -11,13 +11,19 @@ class SummaryForm extends React.Component {
     console.log(e.target.checked);
     document.getElementById("confirm-order").disabled = !e.target.checked;
   };
+
   render() {
     return (
       <Form>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
           <Form.Check
             type="checkbox"
-            label="I agree to Terms and Conditions"
+            label={
+              <span>
+                I agree to{" "}
+                <span style={{ color: "blue" }}> Terms and Conditions</span>{" "}
+              </span>
+            }
             onChange={() => this.setState({ checked: !this.state.checked })}
           />
         </Form.Group>
